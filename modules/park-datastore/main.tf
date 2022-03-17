@@ -18,7 +18,7 @@ resource "aws_dynamodb_table" "park_db" {
 resource "aws_iot_topic_rule" "park-datastore-rule" {
   name        = "putDataInDBRule"
   enabled     = true
-  sql         = "SELECT *, topic(2) as clientId FROM 'park-camera/1/putCarInOutInfo'"
+  sql         = "SELECT *, topic(2) as clientId FROM 'park-camera/+/putCarInOutInfo'"
   sql_version = "2016-03-23"
 
   dynamodb {
