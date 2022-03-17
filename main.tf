@@ -1,7 +1,11 @@
 terraform {
-  backend "s3" {
-    key = "terraform/aws-iot-park-demo"
-    region = "ap-southeast-2"
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "tailong"
+
+    workspaces {
+      name = "aws-iot-park-demo"
+    }
   }
   required_providers {
     aws = {
@@ -18,6 +22,6 @@ provider "aws" {
 }
 
 module "iot-simulator" {
-  source = "./modules/iot-simulator"
+  source     = "./modules/iot-simulator"
   user_email = "tailong.shi@thoughtworks.com"
 }
