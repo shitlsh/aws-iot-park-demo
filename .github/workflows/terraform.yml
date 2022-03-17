@@ -40,12 +40,12 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      with:
+      env:
         TF_VAR_my_email_address: ${{ secrets.MY_EMAIL_ADDRESS }}
       run: terraform plan
 
     # On push to master, build or change infrastructure according to Terraform configuration files
     - name: Terraform Apply
-      with:
+      env:
         TF_VAR_my_email_address: ${{ secrets.MY_EMAIL_ADDRESS }}
       run: terraform apply -auto-approve
