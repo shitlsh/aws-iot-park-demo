@@ -24,9 +24,9 @@ resource "aws_iot_topic_rule" "park-datastore-rule" {
   dynamodb {
     role_arn        = aws_iam_role.iam_role_for_datastore.arn
     hash_key_field  = aws_dynamodb_table.park_db.hash_key
-    hash_key_value  = "${clientId}"
+    hash_key_value  = "$${clientId}"
     range_key_field = aws_dynamodb_table.park_db.range_key
-    range_key_value = "${timestamp()}"
+    range_key_value = "$${timestamp()}"
     table_name      = aws_dynamodb_table.park_db.name
   }
 }
