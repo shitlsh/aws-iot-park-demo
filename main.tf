@@ -20,5 +20,5 @@ provider "aws" {
 
 module "iot-device-simulator" {
   source     = "./modules/iot-device-simulator"
-  user_email = "tailong.shi@thoughtworks.com"
+  user_email = var.my_email_address
 }
