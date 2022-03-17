@@ -21,7 +21,7 @@ provider "aws" {
   region = "ap-southeast-2"
 }
 
-module "iot-simulator" {
-  source     = "modules/iot-device-simulator"
+module "iot-device-simulator" {
+  source     = "./modules/iot-device-simulator"
   user_email = "tailong.shi@thoughtworks.com"
 }
