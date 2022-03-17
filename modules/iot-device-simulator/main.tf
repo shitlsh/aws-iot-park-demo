@@ -1,5 +1,7 @@
 resource "aws_cloudformation_stack" "network" {
-  name = "networking-stack"
+  name = "aws_cloudformation_stack_tshi"
+  on_failure = "ROLLBACK"
+  capabilities = ["CAPABILITY_IAM"]
 
   parameters = {
     UserEmail = var.user_email
