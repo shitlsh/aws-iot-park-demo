@@ -1,11 +1,8 @@
 terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "tailong"
-
-    workspaces {
-      name = "aws-iot-park-demo"
-    }
+  backend "s3" {
+    bucket = "aws-iot-tshi-tfstate"
+    key    = "terraform/aws-iot-park-demo"
+    region = "ap-southeast-2"
   }
   required_providers {
     aws = {
