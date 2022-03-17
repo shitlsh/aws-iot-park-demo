@@ -22,3 +22,7 @@ module "iot-device-simulator" {
   source     = "./modules/iot-device-simulator"
   user_email = var.my_email_address
 }
+
+module "park-datastore" {
+  source = "./modules/park-datastore"
+}

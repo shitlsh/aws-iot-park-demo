@@ -1,6 +1,6 @@
 resource "aws_cloudformation_stack" "network" {
-  name = "aws-cloudformation-stack-tshi"
-  on_failure = "ROLLBACK"
+  name         = "aws-cloudformation-stack-tshi"
+  on_failure   = "ROLLBACK"
   capabilities = ["CAPABILITY_IAM"]
 
   parameters = {
